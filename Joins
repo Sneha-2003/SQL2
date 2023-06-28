@@ -1,1 +1,14 @@
+create table branch(
+    branch_id INT PRIMARY KEY ,
+    br_name varchar(30) NOT NULL,
+    addr varchar(200)
+    );
 
+create table employee(
+    emp_idb INT PRIMARY KEY ,
+    ename varchar(30) NOT NULL,
+    job_desc varchar(200),
+  salary INT,
+  branch_id INT,
+  CONSTRAINT fk_branhId FOREIGN KEY(branch_id) REFERENCES branch(branch_id)
+   );
